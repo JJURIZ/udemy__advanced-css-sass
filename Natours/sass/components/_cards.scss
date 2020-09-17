@@ -13,6 +13,7 @@
     top: 0;
     left: 0;
     width: 100%;
+    -webkit-backface-visibility: hidden; //for Safari support
     backface-visibility: hidden;
     border-radius: 0.3rem;
     overflow: hidden;
@@ -74,7 +75,7 @@
           $color-secondary-light,
           $color-secondary-dark
         ),
-        url(/starter/img/nat-5.jpg);
+        url(/Natours/starter/img/nat-5.jpg);
     }
 
     &--2 {
@@ -83,7 +84,7 @@
           $color-primary-light,
           $color-primary-dark
         ),
-        url(/starter/img/nat-6.jpg);
+        url(/Natours/starter/img/nat-6.jpg);
     }
 
     &--3 {
@@ -92,7 +93,7 @@
           $color-tertiary-light,
           $color-tertiary-dark
         ),
-        url(/starter/img/nat-7.jpg);
+        url(/Natours/starter/img/nat-7.jpg);
     }
   }
 

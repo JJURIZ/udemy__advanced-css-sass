@@ -9,6 +9,10 @@
     opacity: 0;
     visibility: hidden;
     transition: all .3s;
+    
+    @supports(-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+        -webkit-backdrop-filter: blur(10px);
+    }
 
     &__content {
         @include centerHorizontalVertical;
@@ -22,11 +26,20 @@
         opacity: 0;
         transform: translate(-50%, -50%) scale(.25);
         transition: all .5s .2s;
+
+        @include respond(port-tab) {
+            display: inline-block;
+        }
     }
 
     &__left {
         width: 33.333333%;
         display: table-cell;
+
+        @include respond(port-tab) {
+            width: 100%;
+            display: table-row;
+        }
     }
     
     &__right {
@@ -34,11 +47,22 @@
     display: table-cell;
     padding: 3rem 5rem;
     vertical-align: middle;
+
+    @include respond(port-tab) {
+        display: block;
+        width: 100%;
+    }
     }
 
     &__img {
         display: block;
         width: 100%;
+
+        @include respond(port-tab) {
+            float: left;
+            width: 50%;
+            height: 25vh;
+        }
     }
 
     &__text {
@@ -50,6 +74,17 @@
         column-rule: 1px solid $color-grey-light-2;
 
         hyphens: auto;
+
+        @include respond(port-tab) {
+            column-count: 1;
+            column-gap: 0;
+            column-rule: none;
+        }
+ 
+        @include respond(phone) {
+            column-count: 1;
+            margin-bottom: 2rem;
+        }
     }
     &:target {
         opacity: 1;
