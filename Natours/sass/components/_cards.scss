@@ -19,6 +19,7 @@
     overflow: hidden;
     box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
 
+
     &--front {
       background-color: $color-white;
     }
@@ -182,10 +183,8 @@
     font-weight: 100;
   }
 
-
-
-  
-  @include respond(tab-port) {
+  @media only screen and (max-width: 56.25em), 
+  only screen and (hover: hover) {
     height: auto;
     border-radius: 3rem;
     background-color: $color-white;
