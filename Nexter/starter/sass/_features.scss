@@ -1,0 +1,30 @@
+.features {
+    grid-column: center-start / center-end;
+
+    margin: 15rem 0;
+
+    display: grid;
+    //grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); //Width of each tracks should stay between 250rem and 1fr unit. CSS will add as many fit within the container without a media query. 
+    grid-gap: 6rem;
+    align-items: start; // Prior to adding this, the contents of each grid were not aligned at the top, up the column axis. Comment out to see the transformation. 
+}
+
+.feature {
+    display: grid; // Creates a grid within a grid
+    grid-template-columns: min-content 1fr; // Creates explicit 2 column grid with implicit rows (no grid-template-row listed)
+    grid-row-gap: 1.5rem;
+    grid-column-gap: 2.5rem;
+
+    &__icon {
+        fill: $color-primary;
+        width: 4.5rem;
+        height: 4.5rem;
+        grid-row: 1 / span 2; // Causes the icon to span both rows
+        transform: translateY(-1rem); // Pushes the icon up 10px to align with text
+    }
+
+    &__text {
+        font-size: 1.7rem;
+    }
+}
