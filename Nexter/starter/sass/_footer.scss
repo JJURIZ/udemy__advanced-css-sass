@@ -1,4 +1,42 @@
 .footer {
     background-color: $color-secondary;
     grid-column: full-start / full-end;
+    padding: 8rem;
+}
+.nav {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); // Autofit determines the number of columns. Minmax - as soon as column track is less than 15rem it will break onto a new line.
+    grid-gap: 2rem;
+    align-items: center;
+
+    &__link:link,
+    &__link:visited {
+        font-size: 1.4rem;
+        color: white;
+        text-decoration: none;
+        font-family: $font-display;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 1.5rem;
+        display: block;
+        transition: all .2s;
+    }
+
+    // creates highlighted box around footer items when active or when cursor placed over li
+    &__link:hover,
+    &__link:active {
+        background-color: rgba(#fff, .05);
+    }
+}
+
+.copyright {
+    font-size: 1.4rem;
+    color: $color-grey-light-2;
+    margin-top: 6rem;
+    //margin right/left auto causes copyright text to center in the element. 
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    width: 70%;
 }
